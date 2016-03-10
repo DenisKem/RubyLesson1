@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Employee.delete_all
+
+10.times do
+  Employee.create! full_name: Faker::Name.name,
+                   position: Faker::Company.profession,
+                   job_start: rand(3..5).years.ago
+end
