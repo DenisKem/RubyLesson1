@@ -9,12 +9,12 @@
 Employee.delete_all
 Position.delete_all
 
-5.times do
+positions = (0..4).to_a.map do
   Position.create! name: Faker::Company.profession
 end
 
 10.times do
   Employee.create! full_name: Faker::Name.name,
-                   position: Faker::Company.profession,
+                   position: positions.sample,
                    job_start: rand(3..5).years.ago
 end
