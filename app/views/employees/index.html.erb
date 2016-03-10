@@ -16,7 +16,7 @@
     <% @employees.each do |employee| %>
       <tr>
         <td><%= employee.full_name %></td>
-        <td><%= employee.position %></td>
+        <td><%= employee.position.try(:name) %></td>
         <td><%= employee.job_start %></td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>

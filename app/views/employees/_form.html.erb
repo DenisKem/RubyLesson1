@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :position %><br>
-    <%= f.text_field :position %>
+    <%= collection_select(:employee, :position_id, Position.all, :id, :name, :prompt => 'Please select position') %>
   </div>
   <div class="field">
     <%= f.label :job_start %><br>

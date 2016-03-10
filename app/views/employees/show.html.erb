@@ -7,7 +7,7 @@
 
 <p>
   <strong>Position:</strong>
-  <%= @employee.position %>
+  <%= @employee.position.try(:name) %>
 </p>
 
 <p>
