@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  position: MyString
+  job_start: 2016-03-10 14:27:35
+
+two:
+  full_name: MyString
+  position: MyString
+  job_start: 2016-03-10 14:27:35
