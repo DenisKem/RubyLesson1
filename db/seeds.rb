@@ -7,6 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Employee.delete_all
+Position.delete_all
+
+5.times do
+  Position.create! name: Faker::Company.profession
+end
 
 10.times do
   Employee.create! full_name: Faker::Name.name,
