@@ -1,6 +1,7 @@
 == README
 
 Установите git, у кого нет
+
 sudo apt-get update
 sudo apt-get install git
 
