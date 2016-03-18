@@ -46,4 +46,5 @@ group :development, :test do
   gem 'russian'
 end
 
+# Для автоматического формирования аннотаций с полями в файле модели.
 gem 'annotate' #, github: 'ctran/annotate_models'
