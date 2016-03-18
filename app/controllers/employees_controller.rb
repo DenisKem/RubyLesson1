@@ -14,7 +14,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/new
   def new
-    @employee = Employee.new
+    @employee = Employee.new full_name: 'default man'
   end
 
   # GET /employees/1/edit

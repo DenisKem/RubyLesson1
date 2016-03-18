@@ -12,4 +12,7 @@
 
 class Employee < ActiveRecord::Base
   belongs_to :position
+  
+  has_many :projects, :through => :employee_to_projects
+  has_many :employee_to_projects
 end

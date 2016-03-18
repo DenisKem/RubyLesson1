@@ -46,4 +46,4 @@ group :development, :test do
   gem 'russian'
 end
 
-gem 'annotate', github: 'ctran/annotate_models'
+gem 'annotate' #, github: 'ctran/annotate_models'

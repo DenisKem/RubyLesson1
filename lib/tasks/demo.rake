@@ -27,6 +27,21 @@ namespace :demo do
     rand(2..3).times do
       employee.projects << projects.sample
     end
+    
+    position.employees.create!  full_name: 'Феербах'
+    
+    employee.projects.each do |p|
+      puts "Project name = #{p.name}"
+    end
 
+  end
+  
+  desc 'Отсортировать сотрудников'
+  def employee_sort
+    # первыми идут новички
+	puts Employee.order(:job_start => :desc).map(&:job_start)
+	
+	# Первыми покажем тех, кто дольше всех работает.
+	puts Employee.order(:job_start).map(&:job_start)
   end
 end
