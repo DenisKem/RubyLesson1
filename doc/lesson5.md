@@ -9,7 +9,6 @@
 **Не забудьте просмотреть следующие файлы:**
 *ruby_lesson1/db/seeds.rb*
 *ruby_lesson1/lib/tasks/demo.rake*
-*ruby_lesson1/lib/doc/# 5 Работа с моделью в Ruby on Rails.pdf*
 
 ## Полезные ссылки
 1. Создание и удаление объектов
