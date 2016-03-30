@@ -2,7 +2,7 @@
 
 <h1>Listing Employees</h1>
 
-<table>
+<table class='table table-bordered'>
   <thead>
     <tr>
       <th>Full name</th>
@@ -28,6 +28,13 @@
   </tbody>
 </table>
 
+	  
+<h2>Изображение фоном, ч/з css</h2>
+<div class='kitten'></div>
+	  
+<h2>Изображение картинкой</h2>
+<%= image_tag 'test/287.jpg', class: 'img-responsive' %>
+
 <br>
 
-<%= link_to 'New Employee', new_employee_path %>
+<%= link_to 'New Employee', new_employee_path, class: 'btn btn-success' %>
