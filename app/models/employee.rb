@@ -20,4 +20,7 @@ class Employee < ActiveRecord::Base
   
   has_many :projects, :through => :employee_to_projects
   has_many :employee_to_projects, dependent: :destroy
+  
+  validates :full_name, :position_id, presence: true
+  validates :full_name, length: {minimum: 3}
 end

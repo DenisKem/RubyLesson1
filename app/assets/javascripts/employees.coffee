@@ -1,3 +1,17 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+	$form = $('#new_employee')
+
+	$form.on "ajax:error", (e, xhr, status, error) ->
+	  $('.form__error').remove()
+	  
+	  for k, v of xhr.responseJSON
+	    selector = "[name='employee[#{k}]']"
+	    msg = "<span class='form__error'>#{v.join(', ')}</span>"
+	    
+	    $(msg).insertBefore( selector)
+  
+	$form.on "ajax:success", (e, data, status, xhr) ->
+	  row = "<tr><td>#{data.full_name}</td><td>#{data.position.name}</td></tr>"
+	  $('#employees_list').prepend(row)
+	  
+	  $('#modal').modal('hide')

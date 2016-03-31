@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Employees</h1>
+<%= content_tag :a, "New Employee", href: "#modal", class: 'btn btn-success', data: {toggle: 'modal'} %>
 
 <table class='table table-bordered'>
   <thead>
@@ -13,7 +14,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="employees_list">
     <% @employees.each do |employee| %>
       <tr>
         <td><%= employee.full_name %></td>
@@ -37,4 +38,14 @@
 
 <br>
 
+<style>
+	.form__error{ color: red; }
+</style>
+
 <%= link_to 'New Employee', new_employee_path, class: 'btn btn-success' %>
+<% @employee = Employee.new %>
+<%= modal_dialog id: "modal",
+         header: { show_close: true, dismiss: 'modal', title: 'Modal header' },
+         body:   { content: render('employees/form') },
+         footer: {  } %>
+

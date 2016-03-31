@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require_self
 //= require bootstrap
+//= require employees
 
 window.a = 5

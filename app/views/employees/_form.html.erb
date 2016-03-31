@@ -1,4 +1,5 @@
-<%= form_for(@employee, html: {class: 'form-horizontal'}) do |f| %>
+<div class='col-sm-12'>
+<%= form_for(@employee, remote: true, format: :json, html: {class: 'form-horizontal'}) do |f| %>
   <% if @employee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
@@ -27,3 +28,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
