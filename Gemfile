@@ -52,3 +52,5 @@ gem 'annotate' #, github: 'ctran/annotate_models'
 gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'mailcatcher'
+gem 'role_model'
+

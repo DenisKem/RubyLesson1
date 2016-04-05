@@ -140,6 +140,7 @@ GEM
       json (~> 1.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    role_model (0.8.2)
     russian (0.6.0)
       i18n (>= 0.5.0)
     sass (3.4.21)
@@ -208,6 +209,7 @@ DEPENDENCIES
   jquery-rails
   mailcatcher
   rails (= 4.2.1)
+  role_model
   russian
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

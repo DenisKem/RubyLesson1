@@ -15,6 +15,7 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  roles_mask             :integer
 #
 # Indexes
 #
@@ -22,9 +23,16 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
+require 'role_model'
+
 class User < ActiveRecord::Base
+
+  include RoleModel
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  roles :admin, :manager
 end

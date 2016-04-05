@@ -36,5 +36,12 @@ end
   end
 end
 
-User.create! email: 'admin@example.com', password: '12345678'
+u = User.create! email: 'admin@example.com', password: '12345678'
+u.roles << :admin
+u.save
+
+u2 = User.create! email: 'manager@example.com', password: '12345678'
+u2.roles << :manager
+u2.save
+
 
