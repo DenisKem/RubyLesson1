@@ -53,4 +53,4 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'mailcatcher'
 gem 'role_model'
-
+gem "pundit"
