@@ -1,0 +1,35 @@
+gem 'devise'
+gem 'mailcatcher'
+gem 'role_model'
+
+bundle exec rails generate devise:install
+
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+bundle exec rails generate devise User
+bundle exec rake db:migrate
+
+# in seed file:
+
+User.destroy_all
+
+User.create! email: 'admin@example.com', password: '12345678'
+
+
+bundle exec rake db:seed
+
+
+# Roles
+https://github.com/martinrehfeld/role_model
+
+bundle exec rails generate migration add_roles_mask_to_user roles_mask:integer
+
+u = User.create! email: 'admin@example.com', password: '12345678'
+u.roles << :admin
+u.save
+
+u2 = User.create! email: 'manager@example.com', password: '12345678'
+u2.roles << :manager
+u2.save
+
+# Pundit
