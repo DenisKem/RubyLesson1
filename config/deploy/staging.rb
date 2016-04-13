@@ -1,5 +1,5 @@
 set :stage, :staging
-server 'localhost', user: :root, roles: %w{app db web}, port: 2203
+server '212.75.208.130', user: :deploy, roles: %w{app db web}
 
 namespace :deploy do
   desc 'Restart application'

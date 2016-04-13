@@ -8,7 +8,7 @@ set :repo_url, 'https://github.com/DenisKem/ruby_lesson1.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/site'
+set :deploy_to, '/home/deploy/www/ruby_lesson1'
 set :rails_env, :production
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
