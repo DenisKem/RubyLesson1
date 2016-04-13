@@ -1,0 +1,13 @@
+web:
+  build: docker
+  container_name: ruby_lesson1
+
+  ports:
+    - "8083:80"
+    - "2203:22"
+
+  volumes:
+    - ./docker/sshd_config:/etc/ssh/sshd_config
+    - ./docker/nginx.conf:/etc/nginx/nginx.conf
+    - ./tmp/container:/site
+    - ./tmp/container/.ssh:/root/.ssh

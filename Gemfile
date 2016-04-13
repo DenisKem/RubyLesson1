@@ -54,3 +54,11 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'role_model'
 gem "pundit"
+
+group :deployment do
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-rsync'
+end
