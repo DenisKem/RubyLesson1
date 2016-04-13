@@ -9,6 +9,7 @@
 Employee.destroy_all
 Position.destroy_all
 Project.destroy_all
+User.destroy_all
 
 # Для удаления важно использовать destroy_all для того чтобы вызывались коллбэки
 # и выполнялось каскадное удаление
@@ -35,5 +36,12 @@ end
   end
 end
 
+u = User.create! email: 'admin@example.com', password: '12345678'
+u.roles << :admin
+u.save
+
+u2 = User.create! email: 'manager@example.com', password: '12345678'
+u2.roles << :manager
+u2.save
 
 

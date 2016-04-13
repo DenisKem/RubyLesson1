@@ -1,10 +1,16 @@
 class EmployeesController < ApplicationController
+  include Pundit
+
+  after_action :verify_authorized, except: :index
+  after_action :verify_policy_scoped, only: :index
+
+  before_action :authenticate_user!
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.order(created_at: :desc)
+    @employees = policy_scope(Employee).order(created_at: :desc)
   end
 
   # GET /employees/1
@@ -15,6 +21,7 @@ class EmployeesController < ApplicationController
   # GET /employees/new
   def new
     @employee = Employee.new full_name: 'default man'
+      authorize @employee
   end
 
   # GET /employees/1/edit
@@ -25,6 +32,7 @@ class EmployeesController < ApplicationController
   # POST /employees.json
   def create
     @employee = Employee.new(employee_params)
+      authorize @employee
 
     respond_to do |format|
       if @employee.save
@@ -65,6 +73,7 @@ class EmployeesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_employee
       @employee = Employee.find(params[:id])
+      authorize @employee
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

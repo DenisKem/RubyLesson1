@@ -50,3 +50,7 @@ end
 gem 'annotate' #, github: 'ctran/annotate_models'
 
 gem "twitter-bootstrap-rails"
+
+gem 'devise'
+gem 'role_model'
+gem "pundit"
