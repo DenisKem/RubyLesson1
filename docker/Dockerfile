@@ -31,5 +31,13 @@ RUN echo 'root:zzz' | chpasswd
 
 RUN echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
 
+RUN /root/.rbenv/bin/rbenv exec gem install bundler
+RUN /root/.rbenv/bin/rbenv rehash
+
+RUN apt-get install -y sqlite3 libsqlite3-dev
+
+RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+RUN apt-get install -y nodejs
+
 CMD service ssh start && nginx -g 'daemon off;'
 #CMD nginx -g 'daemon off;'
