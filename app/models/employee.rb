@@ -23,4 +23,8 @@ class Employee < ActiveRecord::Base
   
   validates :full_name, :position_id, presence: true
   validates :full_name, length: {minimum: 3}
+
+  def name_and_positions
+    "#{full_name}, #{position.name}"
+  end
 end

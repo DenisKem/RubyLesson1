@@ -54,3 +54,4 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'role_model'
 gem "pundit"
+gem 'rails_admin'
