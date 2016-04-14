@@ -51,6 +51,7 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'role_model'
 gem "pundit"
+
 gem 'faker'
 gem 'russian'
 
@@ -61,3 +62,6 @@ group :deployment do
   gem 'capistrano-rails'
   gem 'capistrano-rsync'
 end
+
+gem 'rails_admin'
+
